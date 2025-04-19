@@ -1,0 +1,81 @@
+import json
+import os
+import pymysql
+import bcrypt
+import jwt
+import datetime
+
+# Environment variables for database credentials and JWT secret key
+DB_HOST = os.environ.get('DB_HOST')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_NAME = os.environ.get('DB_NAME')
+SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+
+def get_db_connection():
+    try:
+        return pymysql.connect(host=DB_HOST, user=DB_USER, passwd=DB_PASSWORD, db=DB_NAME, connect_timeout=5)
+    except Exception as e:
+        print(f"Error connecting to the database: {e}")
+        return None
+
+def lambda_handler(event, context):
+    conn = None
+
+    try:
+        # Assuming the event body is a JSON string
+        body = json.loads(event['body'])
+        username = body['username']
+        nickname = body['nickname']
+        email = body['email']
+        plain_text_password = body['password']
+    except KeyError as e:
+        return
+        {
+            'statusCode': 400,
+            'body': json.dumps(f"Missing parameter: {str(e)}")
+        }
+    except Exception as e:
+        return
+        {
+            'statusCode': 500,
+            'body': json.dumps(f"An error occurred: {str(e)}")
+        }
+
+    try:
+        conn = get_db_connection()
+        if conn is None:
+            raise Exception("Failed to connect to the database")
+
+        with conn.cursor() as cursor:
+            password_hash = bcrypt.hashpw(plain_text_password.encode('utf-8'), bcrypt.gensalt())
+
+            # Call the stored procedure
+            sql = "CALL SignUp(%s, %s, %s, %s)"
+            cursor.execute("CALL SignUp(%s, %s, %s, %s)", (username, nickname, email, password_hash.decode('utf-8')))
+            conn.commit()
+
+            # Generate JWT Token
+            expiration_time = datetime.datetime.utcnow() + datetime.timedelta(hours=24)
+            token = jwt.encode({'email': email, 'exp': expiration_time}, SECRET_KEY, algorithm='HS256')
+
+            return
+            {
+                'statusCode': 200,
+                'body': json.dumps({'message': 'Sign up successful', 'token': token})
+            }
+    except pymysql.MySQLError as e:
+        return
+        {
+            'statusCode': 400,
+            'body': json.dumps(f"Sign up failed: {str(e)}")
+        }
+    except Exception as e:
+        return
+        {
+            'statusCode': 500,
+            'body': json.dumps(f"An error occurred: {str(e)}")
+        }
+    finally:
+        if conn:
+            conn.close()

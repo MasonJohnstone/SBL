@@ -1,0 +1,174 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.player-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(30, 30, 30);
+    color: #ffffff;
+}
+
+.player-image {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.player-info {
+    flex-grow: 1;
+}
+
+.player-name {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.player-team {
+    margin: 0;
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+.team-logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rank-section {
+    text-align: center;
+}
+
+.rank-section h3 {
+    margin: 0;
+    font-size: 1em;
+    color: #333333;
+}
+
+.rank {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(30, 30, 30);
+}
+
+.division-points {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #777777;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.player-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(30, 30, 30);
+    color: #ffffff;
+}
+
+.player-image {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.player-info {
+    flex-grow: 1;
+}
+
+.player-name {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.player-team {
+    margin: 0;
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+.team-logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rank-section {
+    text-align: center;
+}
+
+.rank-section h3 {
+    margin: 0;
+    font-size: 1em;
+    color: #333333;
+}
+
+.rank {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(30, 30, 30);
+}
+
+.division-points {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #777777;
+}

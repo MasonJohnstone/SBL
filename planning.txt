@@ -1,0 +1,173 @@
+Jerseys
+• Owayo store
+
+
+
+Global
+• top team from each country represent in world wide tourney
+
+Australian League
+ • 8 cities (all capital cities)
+ 
+City Comp
+ • QLD, NSW, VIC, ACT, TAS, SA, WA, NT
+ Qualifiers
+ • open, self officiated
+ Finals
+ • pro teams from that city + top 16 teams from qualifier ladder
+ • 1 less spot for each pro team that city has since they auto qual (e.g. if Sydney has 9 pro teams (max possible) then top 7 open qualifiers make city finals)
+Country Comp
+ Pro Qualifiers (16)
+ • first year distribution: QLD(3), NSW(4), VIC(4), ACT(1), TAS(1), SA(1), WA(1), NT(1)
+ • all finals teams
+ Finals (16)
+ • top 8 pro teams + best performing team in city finals that doesn't already have finals spot from pro league performance (could be a non qualifying pro team or a regular city team)
+
+Australia Extended
+• QLD, Brisbane
+• QLD, Gold Coast
+• QLD, Sunshine Coast
+• QLD, Townsville
+• QLD, Cairns
+• QLD, Toowoomba
+• NSW, Sydney
+• NSW, New Castle
+• NSW, Central Coast
+• NSW, Wollongong
+• NSW/VIC, Albury-Wodonga
+• VIC, Melbourne
+• VIC, Geelong
+• VIC, Ballarat
+• VIC, Bendigo
+• SA, Adelaide
+• WA, Perth
+• NT, Darwin
+• TAS, Hobart
+• ACT, Canberra
+
+
+
+
+
+
+
+America
+Northeast Region
+• New York, NY
+• Philadelphia, PA
+• Boston, MA
+• Providence, RI
+• Hartford, CT
+• Newark, NJ
+• Buffalo, NY
+• Baltimore, MD
+• Pittsburgh, PA
+• Albany, NY
+• Portland, ME
+• Manchester, NH
+• Burlington, VT
+• Wilmington, DE
+• Trenton, NJ
+• Allentown, PA
+Midwest Region
+• Chicago, IL
+• Indianapolis, IN
+• Detroit, MI
+• Milwaukee, WI
+• Minneapolis, MN
+• Cleveland, OH
+• Columbus, OH
+• Kansas City, MO
+• St. Louis, MO
+• Omaha, NE
+• Des Moines, IA
+• Fargo, ND
+• Sioux Falls, SD
+• Madison, WI
+• Grand Rapids, MI
+• Duluth, MN
+South Region
+• Atlanta, GA
+• Miami, FL
+• Orlando, FL
+• Charlotte, NC
+• New Orleans, LA
+• Houston, TX
+• Dallas, TX
+• San Antonio, TX
+• Nashville, TN
+• Memphis, TN
+• Louisville, KY
+• Birmingham, AL
+• Richmond, VA
+• Little Rock, AR
+• Jackson, MS
+• Charleston, WV
+West Region
+• Los Angeles, CA
+• San Francisco, CA
+• Phoenix, AZ
+• Denver, CO
+• Seattle, WA
+• Portland, OR
+• Las Vegas, NV
+• Salt Lake City, UT
+• San Diego, CA
+• Sacramento, CA
+• San Jose, CA
+• Tucson, AZ
+• Albuquerque, NM
+• Boise, ID
+• Honolulu, HI
+• Anchorage, AK
+
+
+
+Here’s a refined structure that maintains the importance of being a city champion while allowing for top-ranked teams to participate in the national regular season the following year, even if they didn’t make it to the nationals initially.
+
+Tournament Structure
+1. City-Level Competition
+Regular Season: Teams compete in a self-officiated regular season.
+City Playoffs: The top teams from the regular season compete in a knockout format to determine the city champion.
+Qualification for Nationals: Only the city champion advances to the national postseason.
+2. National Postseason
+Single-Elimination Tournament: City champions from various cities compete in a national knockout tournament to determine the national champion.
+3. National Regular Season (Next Year)
+Automatic Qualifiers: The top teams from the national postseason automatically qualify for the next year’s national regular season.
+Ranking-Based Qualifiers: Additional teams qualify based on their ranking, which is determined by their performance during the city-level competition and their city champion's performance in the national postseason.
+Ranking System
+City-Level Performance: Points are awarded based on regular season and playoff performance within each city.
+National Postseason Performance: Additional points for how far the city champion progresses in the national tournament.
+Composite Ranking: A combined score that considers both city and national performance to rank teams.
+Implementation Example
+City of Sydney
+City Regular Season:
+
+Sydney Sizzlers finish first, Sydney Sparks finish second.
+Sydney Sizzlers win the city playoffs and become city champions.
+National Postseason:
+
+Sydney Sizzlers compete in the national postseason.
+The Sizzlers reach the semifinals.
+Next Year’s National Regular Season:
+
+Automatic Qualification: The Sizzlers, as semifinalists, automatically qualify for the next year’s national regular season.
+Ranking-Based Qualification: The Sydney Sparks, with a high composite ranking due to their strong performance in the city-level competition and the Sizzlers' national performance, qualify for the national regular season.
+Maintaining Prestige and Competitiveness
+City Championship Importance:
+
+Exclusive Title: Only the city champion advances to the national postseason, maintaining the prestige of the city championship.
+Trophies and Rewards: Significant rewards for city champions, such as trophies, cash prizes, and media coverage.
+Incentives for High Rankings:
+
+National Regular Season Entry: High-ranking teams get to compete in the national regular season even if they didn’t make the national postseason.
+Exposure and Development: Teams in the national regular season gain more exposure and experience, helping them improve for future competitions.
+Balanced Competition:
+
+Top Teams Competing: Ensuring the national regular season includes the best teams by combining city champions and high-ranking teams.
+Dynamic and Fair: The ranking system allows for adjustments based on real performance, ensuring fairness and competitiveness.
+Benefits of This Structure
+Maintains City Championship Prestige: Ensures that winning the city championship remains a significant achievement.
+Encourages Consistent Performance: Teams are motivated to perform well throughout the season to secure a high ranking.
+Ensures Competitive Nationals: The national regular season and postseason remain highly competitive with the inclusion of top-ranked teams.
+By using this structure, you can ensure that the city championship remains prestigious while providing opportunities for top teams to compete at the national level based on their performance, thus maintaining a high level of competition throughout.

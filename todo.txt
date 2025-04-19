@@ -1,0 +1,14 @@
+- update signup lambda function to user the signup procedure
+- add login procedure and update lambda
+- finish the app :D
+
+
+CREATE GAME(email, mode)
+add game
+add temp team's
+add roster entry
+get code
+
+JOIN GAME(email, code)
+add temp roster entry
+inform other clients u joined or left lobby

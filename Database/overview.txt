@@ -1,0 +1,54 @@
+Teams
+• ID (INT, Primary Key)
+• name (VARCHAR(24), NOT NULL)
+• nickname (VARCHAR(10))
+• abbreviation (VARCHAR(3))
+• elo (FLOAT, default: 1000.0)
+• reputation (INT, default: 0)
+
+Lineups
+• ID (INT, Primary Key)
+
+Players
+• ID (INT, Primary Key)
+• email (VARCHAR(255), NOT NULL, UNIQUE)
+• name (VARCHAR(24), NOT NULL)
+• nickname (VARCHAR(10))
+• password (VARCHAR(255), NOT NULL)
+• region (INT, FK → Region.ID)
+• elo (FLOAT, default: 1000.0)
+• reputation (FLOAT, default: 0)
+• team (INT, FK → Teams.ID)
+
+Members
+• team (INT, NOT NULL, FK → Teams.ID)
+• player (INT, NOT NULL, FK → Players.ID)
+• proprietor (BOOLEAN, default: FALSE)
+• administrator (BOOLEAN, default: FALSE)
+→ Primary Key: (team, player)
+
+Linees
+• lineup (INT, NOT NULL, FK → Lineups.ID)
+• player (INT, NOT NULL, FK → Players.ID)
+→ Primary Key: (lineup, player)
+
+Games
+• ID (INT, Primary Key)
+• gamemode (INT, NOT NULL)
+• season (INT, NOT NULL)
+• start_time (TIMESTAMP)
+• end_time (TIMESTAMP)
+
+Entities
+• game (INT, NOT NULL, FK → Games.ID)
+• entity (INT, NOT NULL) — represents player, team, lineup, etc.
+• score (INT, NOT NULL)
+→ Primary Key: (game, entity)
+
+Region
+• ID (INT, Primary Key)
+• name (VARCHAR(255), NOT NULL)
+
+
+
+
