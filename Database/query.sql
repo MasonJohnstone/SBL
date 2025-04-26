@@ -4,13 +4,13 @@ USE Application;
 
 SHOW TABLES;
 
-SELECT * FROM Players;
+SELECT * FROM Teams;
 
 DESCRIBE Players;
 DESCRIBE Teams;
+DESCRIBE Region;
 
 
-UPDATE Players
-SET digits = '4'
-WHERE ID = 2;
+RENAME TABLE Region TO Regions;
+
 
