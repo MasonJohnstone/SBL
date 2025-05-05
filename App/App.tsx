@@ -3,7 +3,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthNavigator from './src/navigation/AuthNavigator';
 import AppNavigator from './src/navigation/AppNavigator';
-import NameSelectionScreen from './src/screens/NameSelectionScreen';
+import NameSelectionScreen from './src/screens/NameSelect';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 
 function RootNavigator() {

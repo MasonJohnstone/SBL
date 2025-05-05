@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, ImageBackground } from 'react-native';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import styles from './style';
-import InfoPanel from '../../components/InfoPanel/index';
-import TextInputField from '../../components/TextInputField/index';
-import Row from '../../components/Row';
-import Button from '../../components/Button';
+import { StyleSheet } from 'react-native';
+import InfoPanel from '../components/InfoPanel';
+import TextInputField from '../components/TextInputField';
+import Row from '../components/Row';
+import Button from '../components/Button';
+import CameraDotMask from '../components/CameraDotMask';
 
 const AUTH_URL = 'https://bbfkon2flaqxqoj76tvl3izhqm0mtvtk.lambda-url.ap-southeast-2.on.aws/';
-const BACKGROUND_IMAGE = require('../../assets/EarthBackground.png');
+const BACKGROUND_IMAGE = require('../assets/EarthBackground.png');
 
 export default function AuthScreen() {
   const { signIn, chooseName } = useAuth();
@@ -44,6 +45,8 @@ export default function AuthScreen() {
   return (
     <ImageBackground source={BACKGROUND_IMAGE} style={styles.background} resizeMode="cover">
 
+        <CameraDotMask />
+
         <View style={styles.container}>
 
             <InfoPanel
@@ -64,3 +67,17 @@ export default function AuthScreen() {
     </ImageBackground>
   );
 }
+
+const styles = StyleSheet.create({
+    background: {
+      flex: 1,
+    },
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 16,
+      backgroundColor: 'rgba(0, 0, 0, 0)', // optional for dimming
+    },
+  });
+  
