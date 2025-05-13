@@ -1,24 +1,24 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import PlayMainScreen from '../screens/PlayMainScreen.tsx';
-import PlayLobbyScreen from '../screens/PlayLobbyScreen.tsx';
-import StoreScreen from '../screens/StoreScreen.tsx';
-import InfoScreen from '../screens/InfoScreen.tsx';
+import Main from '../screens/Main';
+import Lobby from '../screens/Lobby';
+import Store from '../screens/Store';
+import Info from '../screens/Info';
 
-export type PlayStackParamList = {
-  PlayMain: undefined;
+export type MainStackParamList = {
+  Main: undefined;
   Lobby: undefined;
 };
 
-const PlayStack = createNativeStackNavigator<PlayStackParamList>();
+const MainStack = createNativeStackNavigator<MainStackParamList>();
 
-function PlayNavigator() {
+function MainNavigator() {
   return (
-    <PlayStack.Navigator screenOptions={{ headerShown: false }}>
-      <PlayStack.Screen name="PlayMain" component={PlayMainScreen} />
-      <PlayStack.Screen name="Lobby" component={PlayLobbyScreen} />
-    </PlayStack.Navigator>
+    <MainStack.Navigator screenOptions={{ headerShown: false }}>
+      <MainStack.Screen name="Main" component={Main} />
+      <MainStack.Screen name="Lobby" component={Lobby} />
+    </MainStack.Navigator>
   );
 }
 
@@ -27,9 +27,9 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
-      <Tab.Screen name="Play" component={PlayNavigator} />
-      <Tab.Screen name="Store" component={StoreScreen} />
-      <Tab.Screen name="Info" component={InfoScreen} />
+      <Tab.Screen name="Play" component={MainNavigator} />
+      <Tab.Screen name="Store" component={Store} />
+      <Tab.Screen name="Info" component={Info} />
     </Tab.Navigator>
   );
 }

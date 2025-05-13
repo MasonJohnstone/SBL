@@ -12,7 +12,7 @@ import CameraDotMask from '../components/CameraDotMask';
 const AUTH_URL = 'https://bbfkon2flaqxqoj76tvl3izhqm0mtvtk.lambda-url.ap-southeast-2.on.aws/';
 const BACKGROUND_IMAGE = require('../assets/EarthBackground.png');
 
-export default function AuthScreen() {
+export default function Auth() {
   const { signIn, chooseName } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

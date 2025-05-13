@@ -9,7 +9,7 @@ import CameraDotMask from '../components/CameraDotMask';
 
 const BACKGROUND_IMAGE = require('../assets/EarthBackground.png');
 
-export default function NameSelectionScreen() {
+export default function NameSelection() {
   const { chooseName } = useAuth();
   const [name, setName] = useState('');
 

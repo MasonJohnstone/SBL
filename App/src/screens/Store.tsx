@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function PlayLobbyScreen() {
+export default function Store() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Play Lobby Screen</Text>
+      <Text>Store Screen</Text>
     </View>
   );
 }
