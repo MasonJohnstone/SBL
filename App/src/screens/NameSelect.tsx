@@ -2,12 +2,8 @@ import React, { useState } from 'react';
 import { View, Alert, ImageBackground, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuth } from '../context/AuthContext';
-import InfoPanel from '../components/InfoPanel';
 import TextInputField from '../components/TextInputField';
-import Button from '../components/Button';
 import CameraDotMask from '../components/CameraDotMask';
-
-const BACKGROUND_IMAGE = require('../assets/EarthBackground.png');
 
 export default function NameSelection() {
   const { chooseName } = useAuth();
@@ -61,25 +57,25 @@ export default function NameSelection() {
   };
 
   return (
-    <ImageBackground source={BACKGROUND_IMAGE} style={styles.background} resizeMode="cover">
+    <View style={[styles.background, styles.container]}>
       <CameraDotMask />
       <View style={styles.container}>
-        <InfoPanel
-          title="Account created!"
-          body="What would you like to be known as? It can be your real name or a creative username."
-        />
+
+        // info panel
 
         <TextInputField value={[name, setName]} placeholder="NAME" />
 
-        <Button text="CONFIRM" onPress={handleConfirm} height={36} width="80%"/>
+        // button
+        
       </View>
-    </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    backgroundColor: '#0D0D0D',
   },
   container: {
     flex: 1,

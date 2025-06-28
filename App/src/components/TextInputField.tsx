@@ -35,12 +35,14 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     paddingBottom: 0,
     paddingHorizontal: 10,
-    backgroundColor: '#FFFFFF',
-    color: '#000000',
+    backgroundColor: '#262626',
+    color: '#BFBFBF',
     borderRadius: 5,
     fontSize: 16,
     fontWeight: 'bold',
     textAlignVertical: 'center', // helps Android center vertically
     marginBottom: 20,
+    borderColor: '#BFBFBF',
+    borderWidth: 1,
   },
 });

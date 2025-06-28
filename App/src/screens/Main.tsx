@@ -10,11 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MainStackParamList } from '../navigation/AppNavigator';
-import InfoPanel from '../components/InfoPanel';
-import Button from '../components/Button';
 import CameraDotMask from '../components/CameraDotMask';
-
-const BACKGROUND_IMAGE = require('../assets/EarthBackground.png');
 
 export default function Main() {
   const [player, setPlayer] = useState<any>(null);
@@ -44,7 +40,7 @@ export default function Main() {
   }, []);
 
   return (
-    <ImageBackground source={BACKGROUND_IMAGE} style={styles.background} resizeMode="cover">
+    <View style={[styles.background, styles.container]}>
       <CameraDotMask />
 
       <View style={styles.container}>
@@ -62,22 +58,20 @@ export default function Main() {
               </View>
             </View>
 
-            <InfoPanel
-              title="Let's Play!"
-              body="Play pickup games or schedule meetups with others in your region."
-            />
+            // info panel
             
-            <Button text="PLAY" onPress={() => navigation.navigate('Lobby')} height={48} width='80%'/>
+            // button
           </>
         )}
       </View>
-    </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    backgroundColor: '#0D0D0D',
   },
   container: {
     flex: 1,
