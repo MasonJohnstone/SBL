@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Alert, ImageBackground, StyleSheet } from 'react-native';
+import { View, Alert, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuth } from '../context/AuthContext';
 import TextInputField from '../components/TextInputField';
@@ -59,17 +59,27 @@ export default function NameSelection() {
   return (
     <View style={[styles.background, styles.container]}>
       <CameraDotMask />
-      <View style={styles.container}>
+  
+      <View style={styles.innerContainer}>
+        <Text style={styles.title}>Select your name!</Text>
+  
+        <TextInputField
+          value={[name, setName]}
+          placeholder="Name"
+        />
+  
+        {/* <TouchableOpacity onPress={handleConfirm} style={styles.button}>
+          <Text style={styles.buttonText}>select</Text>
+        </TouchableOpacity> */}
 
-        // info panel
+        <TouchableOpacity onPress={() => handleConfirm()} style={styles.authButton}>
+          <Text style={styles.authButtonText}>select</Text>
+        </TouchableOpacity>
 
-        <TextInputField value={[name, setName]} placeholder="NAME" />
-
-        // button
-        
       </View>
     </View>
   );
+  
 }
 
 const styles = StyleSheet.create({
@@ -82,6 +92,46 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: 'rgba(0, 0, 0, 0)', // optional dimming overlay
+  },
+  innerContainer: {
+    alignItems: 'center',
+    width: '100%',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: 'white',
+    marginBottom: 16,
+  },
+  // input: {
+  //   width: '80%',
+  //   backgroundColor: '#1A1A1A',
+  //   borderRadius: 8,
+  //   borderColor: '#555',
+  //   borderWidth: 1,
+  //   paddingVertical: 10,
+  //   paddingHorizontal: 16,
+  //   textAlign: 'center',
+  //   color: 'white',
+  //   fontWeight: '600',
+  //   fontSize: 16,
+  //   marginBottom: 20,
+  // },
+  authButton: {
+    backgroundColor: '#D9D9D9',
+    borderRadius: 30,
+    flexDirection: 'row',
+    alignItems: 'center', // ✅ aligns items vertically
+    justifyContent: 'center', // ✅ centers whole content horizontally
+    height: 30, // 🔼 a little more height helps center better visually
+    width: '35%',
+    paddingHorizontal: 12,
+  },   
+  
+  authButtonText: {
+    color: '#262626',
+    fontSize: 16,
+    fontWeight: '700',
+    lineHeight: 20, // 👈 ensures proper vertical alignment with image
   },
 });

@@ -30,7 +30,7 @@ export default function CustomInput({ value, placeholder = '', secure = false }:
 const styles = StyleSheet.create({
   input: {
     width: '80%',
-    height: 36,
+    height: 32,
     paddingVertical: 0,
     paddingTop: 0,
     paddingBottom: 0,

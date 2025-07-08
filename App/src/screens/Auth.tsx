@@ -51,7 +51,7 @@ export default function Auth() {
 
         <Column gap={0} style={{ marginBottom: 24 }}>
             <Text style={styles.welcome}>Welcome to</Text>
-            <Row gap={4}>
+            <Row width={'45%'}>
               <Text style={styles.hoop}>Hoop</Text>
               <Text style={styles.royale}>Royale!</Text>
             </Row>
@@ -62,21 +62,18 @@ export default function Auth() {
           <TextInputField value={[password, setPassword]} placeholder="Password" secure />
 
 
-          <Row gap={90}>
-            <TouchableOpacity onPress={() => handleAuth('login')}>
-              <Column gap={8}>
-                <Image source={LoginIcon} style={styles.icon} />
-                <Text style={styles.label}>Login</Text>
-              </Column>
+          <Row width={'80%'}>
+            <TouchableOpacity onPress={() => handleAuth('login')} style={styles.authButton}>
+              <Text style={styles.authButtonText}>login</Text>
+              <Image source={LoginIcon} style={styles.authButtonIcon} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => handleAuth('signup')}>
-              <Column gap={8}>
-                <Image source={SignupIcon} style={styles.icon} />
-                <Text style={styles.label}>Sign up</Text>
-              </Column>
+            <TouchableOpacity onPress={() => handleAuth('signup')} style={styles.authButton}>
+              <Text style={styles.authButtonText}>sign up</Text>
+              <Image source={SignupIcon} style={styles.authButtonIcon} />
             </TouchableOpacity>
           </Row>
+
 
 
         </View>
@@ -122,5 +119,33 @@ const styles = StyleSheet.create({
       color: '#9193D3',
       fontWeight: '600',
     },
+
+
+
+    authButton: {
+      backgroundColor: '#D9D9D9',
+      borderRadius: 30,
+      flexDirection: 'row',
+      alignItems: 'center', // ✅ aligns items vertically
+      justifyContent: 'center', // ✅ centers whole content horizontally
+      height: 30, // 🔼 a little more height helps center better visually
+      width: '45%',
+      paddingHorizontal: 12,
+    },   
+    
+    authButtonText: {
+      color: '#262626',
+      fontSize: 16,
+      fontWeight: '700',
+      lineHeight: 20, // 👈 ensures proper vertical alignment with image
+    },
+    
+    authButtonIcon: {
+      width: 20,
+      height: 20, // make sure it's not too short
+      marginLeft: 8,
+      resizeMode: 'contain', // just in case
+    },
+    
   });
   

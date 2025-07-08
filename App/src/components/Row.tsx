@@ -3,20 +3,14 @@ import { View, StyleSheet, ViewStyle } from 'react-native';
 
 type RowProps = {
   children: React.ReactNode[];
-  gap?: number;
+  width?: number | `${number}%`; // accepts 100, or '80%', '100%' etc
   style?: ViewStyle;
 };
 
-export default function Row({ children, gap = 16, style }: RowProps) {
-  const spacedChildren = React.Children.toArray(children).map((child, index) => (
-    <View key={index} style={{ paddingHorizontal: gap / 2, flexShrink: 0 }}>
-      {child}
-    </View>
-  ));
-
+export default function Row({ children, width = '100%', style }: RowProps) {
   return (
-    <View style={[styles.row, style]}>
-      {spacedChildren}
+    <View style={[styles.row, { width }, style]}>
+      {children}
     </View>
   );
 }
@@ -24,8 +18,8 @@ export default function Row({ children, gap = 16, style }: RowProps) {
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    flexWrap: 'nowrap', // don't allow wrapping
+    //backgroundColor: 'red',
   },
 });
