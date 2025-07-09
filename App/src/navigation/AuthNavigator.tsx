@@ -8,12 +8,6 @@ export type AuthStackParamList = {
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
-const signOut = async () => {
-  await AsyncStorage.multiRemove(['token', 'email', 'name']);
-  setUser(null); // or however you control auth state
-};
-
-
 export default function AuthNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>

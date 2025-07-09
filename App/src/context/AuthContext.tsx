@@ -34,8 +34,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const signOut = async () => {
-    await AsyncStorage.removeItem('token');
-    await AsyncStorage.removeItem('username');
+    await AsyncStorage.multiRemove(['token', 'username', 'email']);
     setUserToken(null);
     setUsername(null);
   };
@@ -46,7 +45,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ userToken, username, signIn, signOut, chooseName, isLoading }}>
+    <AuthContext.Provider
+      value={{
+        userToken,
+        username,
+        signIn,
+        signOut,
+        chooseName,
+        isLoading,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

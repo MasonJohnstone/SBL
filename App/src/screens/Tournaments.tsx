@@ -9,11 +9,11 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MainStackParamList } from '../navigation/AppNavigator';
 import CameraDotMask from '../components/CameraDotMask';
+import { useAuth } from '../context/AuthContext';
 
 const MenuIcon = require('../assets/menu.png');
 const CrownIcon = require('../assets/crown.png');
@@ -22,6 +22,9 @@ const FilterIcon = require('../assets/filter.png');
 const ArrowIcon = require('../assets/arrow.png');
 
 export default function Main() {
+  const navigation = useNavigation<NativeStackNavigationProp<MainStackParamList>>();
+  const { signOut } = useAuth();
+
   return (
     <View style={styles.background}>
       {/* Header */}
@@ -37,7 +40,7 @@ export default function Main() {
 
       <Text style={styles.title}>Tournaments</Text>
 
-      {/* Top Tabs */}
+      {/* Top Tabs
       <View style={styles.tabsRow}>
         <TouchableOpacity style={styles.tabIcon}>
           <Image source={CrownIcon} style={styles.tabImage} />
@@ -45,53 +48,40 @@ export default function Main() {
         <TouchableOpacity style={styles.tabIcon}>
           <Image source={CalenderIcon} style={styles.tabImage} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabIcon}>
-          <Image source={FilterIcon} style={styles.tabImage} />
-        </TouchableOpacity>
-      </View>
+      </View> */}
 
 
       {/* Tournaments List */}
       <ScrollView contentContainerStyle={styles.scroll}>
         {[
           {
+            id: '1',
             title: 'Solos',
             location: '@Hibiscus',
             date: 'Saturday – 23/05/25',
             prize: '$500 PRIZE POOL',
           },
           {
+            id: '2',
             title: 'Duos',
             location: '@Hibiscus',
             date: 'Saturday – 30/05/25',
             prize: '$1,000 PRIZE POOL',
           },
           {
+            id: '3',
             title: 'Duos',
             location: '@Hibiscus',
             date: 'Saturday – 14/01/25',
             winner: 'Xishymoda 👑',
           },
-          {
-            title: 'Solos',
-            location: '@Hibiscus',
-            date: 'Saturday – 23/05/25',
-            prize: '$500 PRIZE POOL',
-          },
-          {
-            title: 'Duos',
-            location: '@Hibiscus',
-            date: 'Saturday – 30/05/25',
-            prize: '$1,000 PRIZE POOL',
-          },
-          {
-            title: 'Duos',
-            location: '@Hibiscus',
-            date: 'Saturday – 14/01/25',
-            winner: 'Xishymoda 👑',
-          },
+          // ... etc
         ].map((t, index) => (
-          <TouchableOpacity key={index} style={styles.card}>
+          <TouchableOpacity
+            key={index}
+            style={styles.card}
+            onPress={() => navigation.navigate('Tournament', { id: t.id })}
+          >
             <View>
               <Text style={styles.tournamentType}>
                 <Text style={styles.orange}>{t.title}</Text>{' '}
@@ -104,12 +94,14 @@ export default function Main() {
                 <Text style={styles.winner}>{t.winner}</Text>
               )}
             </View>
-            <TouchableOpacity style={styles.arrowPlaceholder}>
-              <Image source={ArrowIcon} style={styles.arrowIcon} />
-            </TouchableOpacity>
 
+            <View style={styles.arrowPlaceholder}>
+              <Image source={ArrowIcon} style={styles.arrowIcon} />
+            </View>
           </TouchableOpacity>
+
         ))}
+
       </ScrollView>
     </View>
   );
@@ -207,6 +199,7 @@ const styles = StyleSheet.create({
     color: '#999',
     marginTop: 2,
     letterSpacing: 1,
+    fontWeight: 'bold',
   },
   prize: {
     color: '#00FF99',

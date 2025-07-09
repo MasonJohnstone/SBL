@@ -8,7 +8,7 @@ import Store from '../screens/Store';
 
 export type MainStackParamList = {
   Tournaments: undefined;
-  Tournament: { id: string }; // or whatever param you use
+  Tournament: { id: string }; // This is correct
 };
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
